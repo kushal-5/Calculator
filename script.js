@@ -23,7 +23,7 @@ document.addEventListener('keydown', (e) => {
         handleInput('=');
     } else if(key === 'Backspace') {
         handleInput('DEL');
-    } else if(key.toLowerCase() === 'c') { // Press 'C' for AC
+    } else if(key.toLowerCase() === 'c') {
         handleInput('AC');
     }
 });
@@ -44,6 +44,35 @@ function handleInput(value) {
     } else if(value === 'DEL'){
         string = string.substring(0, string.length - 1);
         input.value = string;
+    } else if(value === '+/-'){
+        if(string){
+            string = string.startsWith('-') ? string.slice(1) : '-' + string;
+            input.value = string;
+        }
+    } else if(value === 'x²'){
+        try {
+            string = String(eval(string + "*" + string));
+            input.value = string;
+        } catch {
+            input.value = "Error";
+            string = "";
+        }
+    } else if(value === '√'){
+        try {
+            string = String(Math.sqrt(eval(string)));
+            input.value = string;
+        } catch {
+            input.value = "Error";
+            string = "";
+        }
+    } else if(value === '%'){
+        try {
+            string = String(eval(string) / 100);
+            input.value = string;
+        } catch {
+            input.value = "Error";
+            string = "";
+        }
     } else {
         string += value;
         input.value = string;
