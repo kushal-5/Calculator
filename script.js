@@ -1,5 +1,6 @@
 let input = document.getElementById('inputBox');
 let buttons = document.querySelectorAll('button');
+let themeToggle = document.getElementById('themeToggle');
 
 let string = "";
 let arr = Array.from(buttons);
@@ -28,7 +29,12 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Function to handle input
+// Theme toggle
+themeToggle.addEventListener('change', () => {
+    document.body.classList.toggle('light');
+});
+
+// Handle calculator input
 function handleInput(value) {
     if(value === '='){
         try {
