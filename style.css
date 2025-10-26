@@ -5,6 +5,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    user-select: none;  
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body{
@@ -16,6 +21,9 @@ body{
     background: linear-gradient(45deg, #0a0a0a, #3a4452);
     color: #fff;
     transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: default;
+    -webkit-user-drag: none;
 }
 
 .container{
@@ -40,6 +48,11 @@ body{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
+    user-select: none;  
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .switch{
