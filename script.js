@@ -8,7 +8,7 @@ const THEME_KEY = 'calc_theme_v1';
 const HISTORY_KEY = 'calc_history_v1';
 
 let expression = "";
-let memory = 0;
+// memory functionality removed
 
 // Initialize theme from storage
 document.addEventListener('DOMContentLoaded', () => {
@@ -51,13 +51,7 @@ Array.from(keyButtons).forEach(button => {
     });
 });
 
-// Memory buttons
-let memButtons = document.querySelectorAll('.memory-row .button');
-Array.from(memButtons).forEach(button => {
-    button.addEventListener('click', (e) => {
-        handleMemory(e.target.innerHTML);
-    });
-});
+// memory buttons removed
 
 // History clear
 if (clearHistoryBtn) {
@@ -192,11 +186,4 @@ function handleInput(value) {
     }
 }
 
-function handleMemory(label) {
-    if (label === 'MC') { memory = 0; return; }
-    if (label === 'MR') { expression = String(memory); input.value = expression; return; }
-    const val = tryEvaluate(expression);
-    const num = val !== null ? Number(val) : 0;
-    if (label === 'M+') { memory += num; }
-    if (label === 'M-') { memory -= num; }
-}
+// memory handler removed

@@ -275,13 +275,7 @@ button:hover{
     border-radius: 10px;
 }
 
-.memBtn{
-    background: rgba(255,255,255,0.08);
-}
-
-.memory-row button{
-    font-size: 16px;
-}
+/* memory buttons removed */
 
 /* Light Mode */
 body.light{
