@@ -9,16 +9,26 @@
 </head>
 <body>
   <div class="container">
-    <div class="calculator">
+      <div class="calculator" role="application" aria-label="Calculator">
       <div class="top-bar">
-        <span>Calculator</span>
+          <span aria-hidden="true">Calculator</span>
         <label class="switch">
           <input type="checkbox" id="themeToggle">
           <span class="slider"></span>
         </label>
       </div>
 
-      <input type="text" id="inputBox" placeholder="0" readonly />
+        <div class="display-row">
+          <input type="text" id="inputBox" placeholder="0" readonly aria-live="polite" aria-label="Calculator display" />
+          <button class="button copyBtn" id="copyBtn" aria-label="Copy to clipboard">⧉</button>
+        </div>
+
+        <div class="row memory-row" aria-label="Memory controls">
+          <button class="button memBtn" aria-label="Memory clear">MC</button>
+          <button class="button memBtn" aria-label="Memory recall">MR</button>
+          <button class="button memBtn" aria-label="Memory add">M+</button>
+          <button class="button memBtn" aria-label="Memory subtract">M-</button>
+        </div>
 
       <div class="row">
         <button class="button operator">AC</button>
@@ -26,6 +36,13 @@
         <button class="button operator">%</button>
         <button class="button operator">/</button>
       </div>
+
+        <div class="row">
+          <button class="button">(</button>
+          <button class="button">)</button>
+          <button class="button operator">x²</button>
+          <button class="button operator">√</button>
+        </div>
 
       <div class="row">
         <button class="button">7</button>
@@ -51,10 +68,17 @@
       <div class="row">
         <button class="button">00</button>
         <button class="button">0</button>
-        <button class="button">.</button>
+          <button class="button">.</button>
         <button class="button equalBtn">=</button>
       </div>
     </div>
+      <aside class="history" aria-label="Calculation history">
+        <div class="history-header">
+          <span>History</span>
+          <button class="button clearHistoryBtn" id="clearHistoryBtn" aria-label="Clear history">Clear</button>
+        </div>
+        <ul id="historyList" aria-live="polite"></ul>
+      </aside>
   </div>
 
   <script src="script.js"></script>
